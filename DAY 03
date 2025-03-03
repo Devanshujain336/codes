@@ -1,0 +1,34 @@
+problem 1->
+
+https://leetcode.com/problems/flipping-an-image/?envType=problem-list-v2&envId=array
+
+class Solution {
+public:
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
+        int s=0;
+        int j=image.size()-1;
+
+           while(j>s){
+        for(int i=0;i<image.size();i++){
+         
+            swap(image[i][s],image[i][j]);
+        }
+        s++;
+        j--;
+        }
+
+
+        for(int p = 0; p<image.size();p++){
+            for(int q=0; q<image[0].size();q++){
+if(image[p][q]==0)  image[p][q]=1;
+else  image[p][q]=0;
+            }
+        }
+        
+    return image;}
+};
+
+
+approach -- flipped the number using swap function, with double pointers and then if 1 then made it 0, and if 0 then made it 1
+TC - O(n^2)
+SC - O(1)
