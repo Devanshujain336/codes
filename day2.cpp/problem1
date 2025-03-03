@@ -1,0 +1,36 @@
+poblem 1->
+https://www.geeksforgeeks.org/problems/good-or-bad-string1417/1
+
+
+class Solution {
+  public:
+    int isGoodorBad(string S) {
+      int vow=0;
+      int cons = 0;
+      
+      for(int i=0;i<S.length();i++){
+          if(S[i]=='a' || S[i]=='e' || S[i]=='i' || S[i]=='o' || S[i]=='u'){
+              vow++;
+              cons = 0;
+          }
+          
+                
+          
+            else if(S[i]=='?'){
+             cons++;
+             vow++;
+          }
+          
+                 
+          
+          else{
+              vow = 0;
+              cons++;
+          }
+          
+          if(vow>5 || cons>3) return 0;
+      }
+     
+        return 1;  }
+};
+
