@@ -1,0 +1,39 @@
+https://leetcode.com/problems/number-of-equivalent-domino-pairs/description/?envType=problem-list-v2&envId=2030iluv
+
+class Solution {
+public:
+    int numEquivDominoPairs(vector<vector<int>>& dominoes) {
+for(int i=0;i<dominoes.size();i++){
+   
+      sort(dominoes[i].begin(),dominoes[i].end());
+}
+      
+
+       
+         
+        int size = dominoes.size();
+        sort(dominoes.begin(),dominoes.end());
+      
+
+
+     
+        int count=0;
+
+      for(int i=0;i<dominoes.size()-1;i++){
+        int j=i+1;
+      while(j<dominoes.size() && dominoes[i][0]==dominoes[j][0] && dominoes[i][1]==dominoes[j][1]){
+  
+                count++;
+      
+              j++;
+        }
+
+        }
+
+       return count;    }
+
+};
+
+
+SC - 0(1)
+TC - O(n^2)
