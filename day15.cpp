@@ -46,6 +46,25 @@ while(e>=s){
 return false; }
 };
 
-Problem 3-> 
+Problem 3->  the concept was to know that to select the comparing element as when it becomes greater than we decrease col else increase row
   
-  
+  class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int row = 0;
+        int col = matrix[0].size()-1;
+       
+
+        while(row<matrix.size() && col>=0){
+             int element = matrix[row][col];
+
+             if(target == element) return true;
+
+            else if(target>element){
+                row++;
+            }
+
+            else col--;
+        }
+   return false; }
+};
