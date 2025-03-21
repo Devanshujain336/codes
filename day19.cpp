@@ -34,7 +34,7 @@ public:
 ROMAN TO INTEGERS 
 Approach -> here we mapped all the roman terms with their integers and understood that if next roman i is greater than previous, then we needed to subtract it
 TC -> O(n)
-SC - O(n)
+SC - O(1) // as the map size is fixeed
 class Solution {
 public:
     int romanToInt(string s) {
