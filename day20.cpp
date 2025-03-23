@@ -66,7 +66,7 @@ ll sign = 1;
      }
 
      //conversion
-
+/// this will break to find the result when isdigit will break, it only works till the digits are there
      while(i<n && isdigit(s[i])){
         res = res*10 + (s[i]-'0') ;
  
