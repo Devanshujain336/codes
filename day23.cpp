@@ -33,29 +33,29 @@ while(a.length()<b.length()){
 
 
 problem2-> by chatgpt but good concept 
-  class Solution {
+ class Solution {
 public:
     string shortestPalindrome(string s) {
-        int n = s.size();
-        int j = 0;
+        //finding the longest substring
+        string rev  = s;
+        reverse(rev.begin(), rev.end());
+        int i=0;
+int j=0;
 
-        // Find the longest palindromic prefix
-        for (int i = n - 1; i >= 0; i--) {
-            if (s[i] == s[j]) {
-                j++;
+       while(j<s.length()){
+            if(s[i]==rev[j]){
+                i++;
             }
+          
+
+            j++;
+            if(i==s.length()) return rev+s;
         }
 
-        // If the whole string is already a palindrome, return it
-        if (j == n) return s;
+string ans = s.substr(i);
 
-        // The remaining part that is not a palindrome
-        string suffix = s.substr(j);
-        reverse(suffix.begin(), suffix.end());
+reverse(ans.begin(), ans.end());
 
-        // Add the reversed suffix at the start and return
-        return suffix + s;
-    }
+   return ans + s; }
 };
-
 
